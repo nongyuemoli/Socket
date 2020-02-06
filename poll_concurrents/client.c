@@ -3,14 +3,14 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/socket.h>
+#include <stdlib.h>
 #include <arpa/inet.h>
 
 #include "wrap.h"
 
-#define SERV_IP "127.0.0.1"
 #define SERV_PORT 5000
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int sfd, len;
 	struct sockaddr_in serv_addr;
@@ -18,9 +18,15 @@ int main(int argc, char * argv[])
 
 	sfd = Socket(AF_INET, SOCK_STREAM, 0);
 
+	if (argc != 2)
+	{
+		perror("Input server ip address");
+		exit(-1);
+	}
+
 	bzero(&serv_addr, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	inet_pton(AF_INET, SERV_IP, &serv_addr.sin_addr.s_addr);
+	inet_pton(AF_INET, argv[1], &serv_addr.sin_addr.s_addr);
 	serv_addr.sin_port = htons(SERV_PORT);
 
 	connect(sfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));

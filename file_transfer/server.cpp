@@ -9,7 +9,7 @@
 
 #define BUF_SIZE 1024
 
-int main(void)
+int main(int argc, char *argv[])
 {
 
 		int servSock = socket(AF_INET, SOCK_STREAM, 0);

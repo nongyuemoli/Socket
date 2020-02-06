@@ -48,7 +48,7 @@ void * do_work(void * arg)
 	return (void *)0;
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int lfd, cfd;
 	struct sockaddr_in serv_addr, clie_addr;

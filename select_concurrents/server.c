@@ -10,7 +10,7 @@
 
 #define PORT 5000		// 端口号
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int i, j, n, maxi;
 

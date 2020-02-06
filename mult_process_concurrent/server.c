@@ -18,7 +18,7 @@ void wait_child(int signo)
 		return ;
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 		pid_t pid;
 		int lfd, cfd;

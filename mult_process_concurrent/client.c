@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	char buf[BUFSIZ];
 
 	sfd = Socket(AF_INET, SOCK_STREAM, 0);
+
 	if (argc != 2)
 	{
 		perror("Input server ip address");

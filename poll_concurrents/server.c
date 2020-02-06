@@ -15,7 +15,7 @@
 #define PORT 5000		// 端口号
 #define OPEN_MAX 1024
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int i, j, maxi, listenfd, connfd, sockfd;
 

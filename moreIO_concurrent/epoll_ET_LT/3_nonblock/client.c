@@ -8,7 +8,7 @@
 #define MAXLINE 10
 #define SERV_PORT 5000
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int sfd, i;
 	struct sockaddr_in serv_addr;
@@ -17,9 +17,15 @@ int main(int argc, char * argv[])
 
 	sfd = socket(AF_INET, SOCK_STREAM, 0);
 
+	if (argc != 2)
+	{
+		perror("Input server ip address");
+		exit(-1);
+	}
+
 	bzero(&serv_addr, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr);
+	inet_pton(AF_INET, argv[1], &serv_addr.sin_addr);
 	serv_addr.sin_port = htons(SERV_PORT);
 
 	connect(sfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));

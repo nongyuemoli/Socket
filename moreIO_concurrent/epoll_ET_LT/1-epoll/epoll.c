@@ -7,7 +7,7 @@
 
 #define MAXLINE 10
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int efd, i;
 	int pfd[2];

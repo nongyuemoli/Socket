@@ -12,7 +12,7 @@
 #define MAXLINE 10
 #define PORT 5000
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	struct sockaddr_in serv_addr, clie_addr;
 	socklen_t clie_addr_len;
